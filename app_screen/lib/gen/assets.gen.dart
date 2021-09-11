@@ -19,6 +19,8 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/navi_share.png');
   AssetGenImage get naviShareOn =>
       const AssetGenImage('assets/images/navi_share_on.png');
+  AssetGenImage get clockIcon =>
+      const AssetGenImage('assets/images/clock.png');
 }
 
 class Assets {
