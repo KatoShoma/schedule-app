@@ -24,8 +24,6 @@ class ShareScreen extends StatelessWidget {
                 ImageIcon(
                   Assets.images.synergy,
                   size: 200,
-
-                  // color: AppColor.gray90,
                 ),
                 Spacer(),
                 Text(
@@ -54,12 +52,8 @@ class ShareScreen extends StatelessWidget {
                 ),
                 Spacer(),
               ],
-
-
           )
         )
-
-
       ),
     );
   }
