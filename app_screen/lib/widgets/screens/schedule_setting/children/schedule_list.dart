@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:schedule_application/utils/color/app_color.dart';
+import 'package:schedule_application/widgets/components/schedule/schedule_list/schedule_list_data.dart';
 
 class ScheduleList extends StatelessWidget {
   const ScheduleList({
@@ -12,14 +13,14 @@ class ScheduleList extends StatelessWidget {
     return ConstrainedBox(
       constraints: BoxConstraints.expand(height: 560.0),
       child: ListView.builder(
-        itemCount: 10,//TODO:動的に変更
+        itemCount: scheduleListData.length,//TODO:動的に変更
         shrinkWrap: true,
         itemBuilder: (_, index) {
           return Container(
             child: Row(
               children: [
                 Text(
-                  '宿題',//TODO:動的に変換
+                  scheduleListData[index].scheduleName,//TODO:動的に変換
                   style: const TextStyle(
                     color: AppColor.gray90,
                     fontSize: 20.0,
@@ -27,7 +28,7 @@ class ScheduleList extends StatelessWidget {
                 ),
                 SizedBox(width: 30.0,),
                 Text(
-                  '1h',//TODO: 動的に変換
+                  scheduleListData[index].times.toString(),//TODO: 動的に変換
                   style: const TextStyle(
                     color: AppColor.gray90,
                     fontSize: 20.0,

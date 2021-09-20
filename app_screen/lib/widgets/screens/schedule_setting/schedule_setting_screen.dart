@@ -5,6 +5,8 @@ import 'package:keyboard_actions/keyboard_actions.dart';
 import 'package:provider/provider.dart';
 import 'package:schedule_application/gen/assets.gen.dart';
 import 'package:schedule_application/utils/color/app_color.dart';
+import 'package:schedule_application/widgets/components/schedule/schedule_list/schedule_item_model.dart';
+import 'package:schedule_application/widgets/components/schedule/schedule_list/schedule_list_data.dart';
 import 'package:schedule_application/widgets/components/schedule/schedule_setting_input_form/schedule_setting_input_form.dart';
 import 'package:schedule_application/widgets/screens/schedule_setting/children/schedule_create_button.dart';
 import 'package:schedule_application/widgets/screens/schedule_setting/schedule_setting_screen_state.dart';
@@ -36,7 +38,6 @@ class ScheduleSettingScreen extends StatelessWidget {
             actions: [
               TextButton(
                 onPressed: (){
-                  // TODO: 編集を押された時の処理
                 },
                 child: Text(
                   '編集',
