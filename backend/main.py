@@ -1,21 +1,23 @@
 from flask import Flask
+from scheduler import scheduler
+from user_manager import User_manager
+
 
 app = Flask(__name__)
 
 @app.route('/',methods=["GET"])
-def hello1():
-    print("GET通信です。")
-    return "hello"
+def run_server():
+    global scheduler = scheduler()
+    global user_manager = User_manager()
 
-@app.route('/',methods=["POST"])
-def hello2():
-    print("POST通信です。")
-    return "hello"
+@app.route('/scheduler',methods=["POST"])
+def run_scheduler():
+    return hoge
 
-@app.route('/test1',methods=["GET"])
-def hello3():
-    print("GET通信です。")
-    return "hello"
+@app.route('/user_manager',methods=["POST"])
+def run_user_manager():
+    user_manager.increment_counter()
+    return user_manager.get_counter()
 
 if __name__ == "__main__":
     app.run(debug=False, host='0.0.0.0', port='80')
