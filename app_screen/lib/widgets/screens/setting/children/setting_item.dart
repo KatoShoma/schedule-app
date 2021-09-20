@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:schedule_application/gen/assets.gen.dart';
 import 'package:schedule_application/utils/color/app_color.dart';
 
-
 class SettingItem extends StatelessWidget {
   final String title;
   final Function() onTap;
