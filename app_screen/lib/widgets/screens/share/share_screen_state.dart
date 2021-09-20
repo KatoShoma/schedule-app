@@ -27,8 +27,6 @@ class ShareScreenController extends StateNotifier<ShareScreenState> with Locator
 
   void pressEnjoyedButton(){
     state = state.copyWith(isPressedEnjoyedButton: true);
-    // print(state.isPressedEnjoyedButton);
   }
-
 }
 
