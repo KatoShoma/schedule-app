@@ -8,8 +8,6 @@ import 'package:schedule_application/widgets/screens/setting/children/setting_it
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:state_notifier/state_notifier.dart';
 import 'package:schedule_application/models/services/sharer.dart';
-
-
 import 'package:url_launcher/url_launcher.dart';
 import 'package:schedule_application/utils/constant/constant.dart';
 import 'dart:io';
@@ -39,7 +37,6 @@ class SettingScreenController extends StateNotifier<SettingScreenState> with Loc
   }
 
   void onTapReview() {
-    print("push");
     final storeURL = Platform.isIOS ? Constant.appStoreURL : Constant.googlePlayStoreURL;
     launch(storeURL);
   }

@@ -18,7 +18,7 @@ class SettingOnoffSwitch extends StatelessWidget {
         width: double.infinity,
         decoration: const BoxDecoration(
           border: Border(
-            bottom  : BorderSide(
+            bottom : BorderSide(
               width: 1.0,
               color: AppColor.gray30,
             ),
