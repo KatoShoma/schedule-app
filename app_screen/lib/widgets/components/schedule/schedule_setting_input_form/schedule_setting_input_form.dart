@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:provider/provider.dart';
 import 'package:schedule_application/utils/color/app_color.dart';
-import 'package:schedule_application/widgets/components/schedule/schedule_setting_input_form/children/schedule_field.dart';
+import 'package:schedule_application/widgets/components/schedule/schedule_list/schedule_item_model.dart';
+import 'package:schedule_application/widgets/components/schedule/schedule_list/schedule_list_data.dart';
 import 'package:schedule_application/widgets/components/schedule/schedule_setting_input_form/children/schedule_times_button.dart';
 import 'package:schedule_application/widgets/components/schedule/schedule_setting_input_form/schedule_setting_input_form_state.dart';
 
@@ -23,7 +24,16 @@ class ScheduleSettingInputForm extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              ScheduleField(),
+              Container(
+                color: AppColor.gray60,
+                height: 60,
+                width: double.infinity,
+                padding: EdgeInsets.all(10),
+                child: CupertinoTextField(
+                  placeholder: "予定を入力してください",
+                  onChanged: (String text) => context.read<ScheduleSettingInputFormController>().enteredTask(text),
+                ),
+              ),
               Container(
                 color: AppColor.gray60,
                 width: double.infinity,
@@ -43,7 +53,7 @@ class ScheduleSettingInputForm extends StatelessWidget {
                     ),
                     SizedBox(width: 10.0),
                     ScheduleTimesButton(
-                      times: '0.5h',
+                      times: context.select<ScheduleSettingInputFormState, String>((state) => state.workingTime),
                       onTap: () => context.read<ScheduleSettingInputFormController>().onTapTime(),
                     ),
                     Spacer(),
@@ -52,6 +62,11 @@ class ScheduleSettingInputForm extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () {
                           //TODO: 追加ボタンPUSH時の動作
+                          scheduleListData.add(
+                              ScheduleItemModel.createScheduleCell(
+                                scheduleName: '課題',
+                                times: '1時間',
+                              ));
                         },
                         child: Text(
                           '追加',
