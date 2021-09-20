@@ -5,15 +5,18 @@ import 'package:schedule_application/utils/color/app_color.dart';
 
 class SettingItem extends StatelessWidget {
   final String title;
+  final Function() onTap;
 
   const SettingItem({
     Key? key,
     required this.title,
+    required this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: onTap,
       child: Container(
         width: double.infinity,
         decoration: const BoxDecoration(
