@@ -55,7 +55,6 @@ class ShareScreen extends StatelessWidget {
                   ShareButton(
                     isPressedEnjoyedButton: context.select<ShareScreenState, bool>((state) => state.isPressedEnjoyedButton),
                     onPressed: () => context.read<ShareScreenController>().pressEnjoyedButton(),
-                    // onPressed: () => context.read<ShareScreenController>().getIsPressedEnjoyedButton() ? context.read<ShareScreenController>().pressEnjoyedButton() : null,
                   ),
                   Spacer(),
                 ],

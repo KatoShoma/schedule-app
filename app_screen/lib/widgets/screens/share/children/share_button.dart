@@ -17,10 +17,7 @@ class ShareButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery
-          .of(context)
-          .size
-          .width * 0.8,
+      width: MediaQuery.of(context).size.width * 0.8,
       height: 60,
       child: ElevatedButton(
         onPressed: !isPressedEnjoyedButton ? onPressed : null,
@@ -35,8 +32,7 @@ class ShareButton extends StatelessWidget {
             color: AppColor.white,
             fontSize: 20.0,
           ),
-        )
-            : Text('満喫おめでとうございます',
+        ) : Text('満喫おめでとうございます',
           textAlign: TextAlign.center,
           style: const TextStyle(
             color: AppColor.white,
