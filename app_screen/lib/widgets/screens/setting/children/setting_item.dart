@@ -20,14 +20,14 @@ class SettingItem extends StatelessWidget {
           border: Border(
             bottom  : BorderSide(
               width: 1.0,
-              color: Colors.black12,
+              color: AppColor.gray30,
             ),
           ),
         ),
         padding: EdgeInsets.only(
-          top: 13,
+          top: 16,
           left: 50,
-          bottom: 8,
+          bottom: 13,
         ),
         child: Row(
           children: [

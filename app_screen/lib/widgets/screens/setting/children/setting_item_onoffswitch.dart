@@ -20,7 +20,7 @@ class SettingOnoffSwitch extends StatelessWidget {
           border: Border(
             bottom  : BorderSide(
               width: 1.0,
-              color: Colors.black12,
+              color: AppColor.gray30,
             ),
           ),
         ),
@@ -41,7 +41,7 @@ class SettingOnoffSwitch extends StatelessWidget {
             ),
             Spacer(),
             CupertinoSwitch(
-              trackColor: Colors.grey,
+              trackColor: AppColor.gray30,
               value: true,
               onChanged:(bool value){},
             ),
