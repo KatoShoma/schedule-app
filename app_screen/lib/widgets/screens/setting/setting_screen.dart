@@ -20,9 +20,7 @@ class SettingScreen extends StatelessWidget {
         title: Center(child: Text('設定')),
       ),
       body: Column(
-        //mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            //通知
             Container(
               width: double.infinity,
               decoration: const BoxDecoration(
@@ -35,7 +33,7 @@ class SettingScreen extends StatelessWidget {
               ),
               padding: EdgeInsets.only(
                 top: 13,
-                left: 70,
+                left: 50,
                 bottom: 8,
               ),
               child: Row(
@@ -50,11 +48,8 @@ class SettingScreen extends StatelessWidget {
                   ),
                   Spacer(),
                   CupertinoSwitch(
-                    //activeColor: Color(0xFFff4a4a),
                     trackColor: Colors.grey,
-                    //value: isOn,
                     value: true,
-                    //onChanged: onChangeIsOn,
                     onChanged:(bool value){},
                   ),
                   SizedBox(width: 25.0),
@@ -62,7 +57,6 @@ class SettingScreen extends StatelessWidget {
               ),
             ),
 
-            //ダークモード
             Container(
               width: double.infinity,
               decoration: const BoxDecoration(
@@ -75,7 +69,7 @@ class SettingScreen extends StatelessWidget {
               ),
               padding: EdgeInsets.only(
                 top: 13,
-                left: 70,
+                left: 50,
                 bottom: 8,
               ),
               child: Row(
@@ -90,11 +84,8 @@ class SettingScreen extends StatelessWidget {
                   ),
                   Spacer(),
                   CupertinoSwitch(
-                    //activeColor: Color(0xFFff4a4a),
                     trackColor: Colors.grey,
-                    //value: isOn,
                     value: true,
-                    //onChanged: onChangeIsOn,
                     onChanged:(bool value){},
                   ),
                   SizedBox(width: 25.0),
@@ -102,10 +93,9 @@ class SettingScreen extends StatelessWidget {
               ),
             ),
 
-            //プロフィール設定
             Container(
-                width: double.infinity,
-                decoration: const BoxDecoration(
+              width: double.infinity,
+              decoration: const BoxDecoration(
                 border: Border(
                   bottom  : BorderSide(
                     width: 1.0,
@@ -113,11 +103,11 @@ class SettingScreen extends StatelessWidget {
                   ),
                 ),
               ),
-                padding: EdgeInsets.only(
-                  top: 13,
-                  left: 70,
-                  bottom: 8,
-                ),
+              padding: EdgeInsets.only(
+                top: 13,
+                left: 50,
+                bottom: 8,
+              ),
               child: Row(
                 children: [
                   Text(
@@ -139,7 +129,6 @@ class SettingScreen extends StatelessWidget {
               ),
             ),
 
-            //レビューを書く
             Container(
               width: double.infinity,
               decoration: const BoxDecoration(
@@ -152,7 +141,7 @@ class SettingScreen extends StatelessWidget {
               ),
               padding: EdgeInsets.only(
                 top: 13,
-                left: 70,
+                left: 50,
                 bottom: 8,
               ),
               child: Row(
@@ -176,7 +165,6 @@ class SettingScreen extends StatelessWidget {
               ),
             ),
 
-            //友達に教える
             Container(
               width: double.infinity,
               decoration: const BoxDecoration(
@@ -189,7 +177,7 @@ class SettingScreen extends StatelessWidget {
               ),
               padding: EdgeInsets.only(
                 top: 13,
-                left: 70,
+                left: 50,
                 bottom: 8,
               ),
               child: Row(
@@ -212,6 +200,7 @@ class SettingScreen extends StatelessWidget {
                 ],
               ),
             ),
+
             Container(
               width: double.infinity,
               decoration: const BoxDecoration(
@@ -224,7 +213,7 @@ class SettingScreen extends StatelessWidget {
               ),
               padding: EdgeInsets.only(
                 top: 13,
-                left: 70,
+                left: 50,
                 bottom: 8,
               ),
               child: Row(
@@ -248,7 +237,6 @@ class SettingScreen extends StatelessWidget {
               ),
             ),
 
-            //アプリバージョン
             Container(
               width: double.infinity,
               decoration: const BoxDecoration(
@@ -261,31 +249,31 @@ class SettingScreen extends StatelessWidget {
               ),
               padding: EdgeInsets.only(
                 top: 13,
-                left: 70,
+                left: 50,
                 bottom: 8,
               ),
-                child: Row(
-                  children: [
-                    Text(
-                      'アプリバージョン',
-                      textAlign: TextAlign.left,
-                      style: const TextStyle(
-                        color: AppColor.black,
-                        fontSize: 20.0,
-                      ),
+              child: Row(
+                children: [
+                  Text(
+                    'アプリバージョン',
+                    textAlign: TextAlign.left,
+                    style: const TextStyle(
+                      color: AppColor.black,
+                      fontSize: 20.0,
                     ),
-                    Spacer(),
-                    Text(
-                      '1.00',
-                      textAlign: TextAlign.left,
-                      style: const TextStyle(
-                        color: AppColor.black,
-                        fontSize: 20.0,
-                      ),
+                  ),
+                  Spacer(),
+                  Text(
+                    '1.00',
+                    textAlign: TextAlign.left,
+                    style: const TextStyle(
+                      color: AppColor.black,
+                      fontSize: 20.0,
                     ),
-                    SizedBox(width: 25.0),
-                  ],
-                ),
+                  ),
+                  SizedBox(width: 25.0),
+                ],
+              ),
             ),
             Spacer(),
           ]
