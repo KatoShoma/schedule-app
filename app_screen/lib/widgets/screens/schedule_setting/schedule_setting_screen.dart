@@ -7,11 +7,10 @@ import 'package:schedule_application/gen/assets.gen.dart';
 import 'package:schedule_application/utils/color/app_color.dart';
 import 'package:schedule_application/widgets/components/schedule/schedule_list/schedule_item_model.dart';
 import 'package:schedule_application/widgets/components/schedule/schedule_list/schedule_list_data.dart';
+import 'package:schedule_application/widgets/components/schedule/schedule_list_screen/schedule_list_screen.dart';
 import 'package:schedule_application/widgets/components/schedule/schedule_setting_input_form/schedule_setting_input_form.dart';
 import 'package:schedule_application/widgets/screens/schedule_setting/children/schedule_create_button.dart';
 import 'package:schedule_application/widgets/screens/schedule_setting/schedule_setting_screen_state.dart';
-
-import 'children/schedule_list.dart';
 
 class ScheduleSettingScreen extends StatelessWidget {
 
@@ -50,11 +49,11 @@ class ScheduleSettingScreen extends StatelessWidget {
           ),
           body: Stack(
             children: [
-              ScheduleList(),
+              ScheduleListScreen(),
               ScheduleSettingInputForm(),
               ScheduleCreateButton(
                 title: 'スケジュールを作成',
-                onPressed: (){},
+                onPressed: () => context.read<ScheduleSettingScreenController>().createScheduleJson(),
               ),
             ],
           ),
