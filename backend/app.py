@@ -5,6 +5,7 @@ import time
 from gevent.pywsgi import WSGIServer
 from geventwebsocket.handler import WebSocketHandler
 from flask import Flask, request, render_template
+from flask import jsonify
 
 from user_manager.User_manager import User_manager
 
@@ -37,10 +38,10 @@ def run_scheduler():
     results['give_up'] = giveup_task
     results['user_planning_time'] = user_planning_time
     # save json
-    with open('./output_template.json', 'w') as fp:
-        json.dump(results, fp)
-
-    return results
+    # with open('./output_template.json', 'w') as fp:
+    #     json.dump(results, fp)
+    # convert jsonify, when this function call.
+    return jsonify(results)
 
 @app.route('/user_manager_increment',methods=["POST"])
 def user_manager_increment():
