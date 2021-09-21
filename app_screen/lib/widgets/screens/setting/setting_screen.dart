@@ -9,7 +9,7 @@ import 'package:schedule_application/widgets/screens/setting/children/setting_it
 import 'package:schedule_application/widgets/screens/setting/setting_screen_state.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:schedule_application/models/services/sharer.dart';
-
+import 'package:schedule_application/models/preference/preference.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({
@@ -21,6 +21,7 @@ class SettingScreen extends StatelessWidget {
     return StateNotifierProvider<SettingScreenController, SettingScreenState>(
         create: (_) => SettingScreenController(
           context: context,
+          preference: Preference(),
           share: ShareService(),
         ),
         builder: (context, _) {
@@ -33,10 +34,14 @@ class SettingScreen extends StatelessWidget {
 
                   SettingOnoffSwitch(
                     title: '通知',
+                    isOn: context.select<SettingScreenState, bool>((state) => state.isAllowedRetranslation),
+                    onChangeIsOn: (isOn) => context.read<SettingScreenController>().onChangeRetranslationIsOn(isOn: isOn),
                   ),
 
                   SettingOnoffSwitch(
                     title: 'ダークモード',
+                    isOn: context.select<SettingScreenState, bool>((state) => state.isDarkModeRetranslation),
+                    onChangeIsOn: (isOn) => context.read<SettingScreenController>().onChangeDarkModeIsOn(isOn: isOn),
                   ),
 
 

@@ -4,6 +4,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 enum PreferenceKey {
   // ユーザーID
   userId,
+  isAllowedRetranslation,
+  isDarkModeRetranslation,
 }
 
 class Preference {
