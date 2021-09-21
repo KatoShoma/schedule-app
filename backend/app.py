@@ -10,12 +10,12 @@ from flask import jsonify
 from user_manager.User_manager import User_manager
 
 ### Nishiyama lib
-
 from scheduler.scheduler_algorithm import SchedulerAlgorithm
 from scheduler.scheduler_algorithm import scheduler_into_percent
 
 
 app = Flask(__name__)
+app.config["JSON_AS_ASCII"] = False
 app.config.from_object(__name__)
 user_manager = User_manager()
 
