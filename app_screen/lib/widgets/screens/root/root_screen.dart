@@ -8,6 +8,7 @@ import 'package:schedule_application/widgets/screens/root/root_screen_state.dart
 import 'package:schedule_application/widgets/screens/schedule/schedule_screen.dart';
 import 'package:schedule_application/widgets/screens/setting/setting_screen.dart';
 import 'package:schedule_application/widgets/screens/share/share_screen.dart';
+import 'package:schedule_application/widgets/screens/timer/timer_screen.dart';
 
 class RootScreen extends StatelessWidget {
   @override
@@ -29,6 +30,7 @@ class RootScreen extends StatelessWidget {
                     ScheduleScreen(),
                     ShareScreen(),
                     SettingScreen(),
+                    //TimerScreen(),
                   ][index],
                 );
               },

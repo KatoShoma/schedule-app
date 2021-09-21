@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:schedule_application/widgets/components/schedule/schedule_list/schedule_list_data.dart';
 import 'package:state_notifier/state_notifier.dart';
 
 part 'schedule_setting_screen_state.freezed.dart';
@@ -18,5 +19,9 @@ class ScheduleSettingScreenController extends StateNotifier<ScheduleSettingScree
   @override
   void initState() {
 
+  }
+
+  void createScheduleJson() {
+    print(scheduleListData.toString());
   }
 }
