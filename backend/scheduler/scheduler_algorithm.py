@@ -33,9 +33,12 @@ class SchedulerAlgorithm:
             print(f'currently dicts{self.users_tasks}')
             print('-' * 20)
 
-            self.users_tasks, self.delete_tasks = self.give_up_tasks(self.users_tasks, self.give_up_task_dict)
+            print('^' * 20)
+            self.users_tasks, delete_tasks = self.give_up_tasks(self.users_tasks, self.give_up_task_dict)
+            # print(self.give_up_tasks(self.users_tasks, self.give_up_task_dict))
+            print('^' * 20)
 
-        return self.users_tasks, self.delete_tasks
+        return self.users_tasks, delete_tasks
 
     def sum_task_times(self, user_tasks):
 
@@ -56,7 +59,7 @@ class SchedulerAlgorithm:
 
         del users_tasks[long_task]
 
-        return users_tasks,give_up_task_dict
+        return users_tasks, give_up_task_dict
 
 def scheduler_into_percent(todo_task, user_planning_time):
 
