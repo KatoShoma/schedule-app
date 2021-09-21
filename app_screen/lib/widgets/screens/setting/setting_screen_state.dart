@@ -20,7 +20,7 @@ class SettingScreenState with _$SettingScreenState {
   const factory SettingScreenState({
     @Default(false) bool isAllowedRetranslation,
     @Default(false) bool isDarkModeRetranslation,
-}) = _SettingScreenState;
+  }) = _SettingScreenState;
 }
 
 class SettingScreenController extends StateNotifier<SettingScreenState> with LocatorMixin {

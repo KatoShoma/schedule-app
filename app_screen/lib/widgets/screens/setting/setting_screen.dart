@@ -31,35 +31,28 @@ class SettingScreen extends StatelessWidget {
             ),
             body: Column(
                 children: [
-
                   SettingOnoffSwitch(
                     title: '通知',
                     isOn: context.select<SettingScreenState, bool>((state) => state.isAllowedRetranslation),
                     onChangeIsOn: (isOn) => context.read<SettingScreenController>().onChangeRetranslationIsOn(isOn: isOn),
                   ),
-
                   SettingOnoffSwitch(
                     title: 'ダークモード',
                     isOn: context.select<SettingScreenState, bool>((state) => state.isDarkModeRetranslation),
                     onChangeIsOn: (isOn) => context.read<SettingScreenController>().onChangeDarkModeIsOn(isOn: isOn),
                   ),
-
-
                   SettingItem(
                       title: 'レビューを書く',
                       onTap: () => context.read<SettingScreenController>().onTapReview(),
                   ),
-
                   SettingItem(
                       title: '友達に教える',
                       onTap: () => context.read<SettingScreenController>().onTapShare(),
                   ),
-
                   SettingItem(
                       title: 'ヒントを見る',
                       onTap: () {print("aaa");}
                   ),
-
                   SettingItemAppVersion(
                     version: '1.00',
                   ),

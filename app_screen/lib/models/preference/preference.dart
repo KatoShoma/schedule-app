@@ -4,7 +4,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 enum PreferenceKey {
   // ユーザーID
   userId,
+  // 通知ボタンのON/OFF
   isAllowedRetranslation,
+  // ダークモードのON/OFF
   isDarkModeRetranslation,
 }
 
