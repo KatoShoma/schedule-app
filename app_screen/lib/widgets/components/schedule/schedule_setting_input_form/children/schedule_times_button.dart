@@ -14,7 +14,6 @@ class ScheduleTimesButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-
       height: 40,
       width: MediaQuery.of(context).size.width * 0.5,
       decoration: BoxDecoration(

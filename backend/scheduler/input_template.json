@@ -1,0 +1,10 @@
+{
+ "times": 13,
+"tasks":{
+  "math" : 12,
+  "japanese" : 13,
+  "English" : 11,
+  "science" : 8,
+  "cv" : 3
+ }
+}

@@ -11,4 +11,5 @@ abstract class AppColor {
   static const black = Color(0xFF000000);
   static const red = Colors.red;
   static const orange = Color(0xFFffA463);
+  static const cyan = Color(0xFF55C1D9);
 }

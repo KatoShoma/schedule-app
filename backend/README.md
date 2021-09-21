@@ -7,3 +7,8 @@ and
 ```
 pip3 install -r requirements.txt
 ```
+
+# run
+```
+sudo python3 main.py
+```

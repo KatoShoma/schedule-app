@@ -16,8 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ScheduleSettingInputFormStateTearOff {
   const _$ScheduleSettingInputFormStateTearOff();
 
-  _ScheduleSettingInputFormState call() {
-    return const _ScheduleSettingInputFormState();
+  _ScheduleSettingInputFormState call(
+      {String taskName = '', String workingTime = '30分'}) {
+    return _ScheduleSettingInputFormState(
+      taskName: taskName,
+      workingTime: workingTime,
+    );
   }
 }
 
@@ -25,7 +29,14 @@ class _$ScheduleSettingInputFormStateTearOff {
 const $ScheduleSettingInputFormState = _$ScheduleSettingInputFormStateTearOff();
 
 /// @nodoc
-mixin _$ScheduleSettingInputFormState {}
+mixin _$ScheduleSettingInputFormState {
+  String get taskName => throw _privateConstructorUsedError;
+  String get workingTime => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ScheduleSettingInputFormStateCopyWith<ScheduleSettingInputFormState>
+      get copyWith => throw _privateConstructorUsedError;
+}
 
 /// @nodoc
 abstract class $ScheduleSettingInputFormStateCopyWith<$Res> {
@@ -33,6 +44,7 @@ abstract class $ScheduleSettingInputFormStateCopyWith<$Res> {
           ScheduleSettingInputFormState value,
           $Res Function(ScheduleSettingInputFormState) then) =
       _$ScheduleSettingInputFormStateCopyWithImpl<$Res>;
+  $Res call({String taskName, String workingTime});
 }
 
 /// @nodoc
@@ -43,14 +55,34 @@ class _$ScheduleSettingInputFormStateCopyWithImpl<$Res>
   final ScheduleSettingInputFormState _value;
   // ignore: unused_field
   final $Res Function(ScheduleSettingInputFormState) _then;
+
+  @override
+  $Res call({
+    Object? taskName = freezed,
+    Object? workingTime = freezed,
+  }) {
+    return _then(_value.copyWith(
+      taskName: taskName == freezed
+          ? _value.taskName
+          : taskName // ignore: cast_nullable_to_non_nullable
+              as String,
+      workingTime: workingTime == freezed
+          ? _value.workingTime
+          : workingTime // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract class _$ScheduleSettingInputFormStateCopyWith<$Res> {
+abstract class _$ScheduleSettingInputFormStateCopyWith<$Res>
+    implements $ScheduleSettingInputFormStateCopyWith<$Res> {
   factory _$ScheduleSettingInputFormStateCopyWith(
           _ScheduleSettingInputFormState value,
           $Res Function(_ScheduleSettingInputFormState) then) =
       __$ScheduleSettingInputFormStateCopyWithImpl<$Res>;
+  @override
+  $Res call({String taskName, String workingTime});
 }
 
 /// @nodoc
@@ -65,30 +97,80 @@ class __$ScheduleSettingInputFormStateCopyWithImpl<$Res>
   @override
   _ScheduleSettingInputFormState get _value =>
       super._value as _ScheduleSettingInputFormState;
+
+  @override
+  $Res call({
+    Object? taskName = freezed,
+    Object? workingTime = freezed,
+  }) {
+    return _then(_ScheduleSettingInputFormState(
+      taskName: taskName == freezed
+          ? _value.taskName
+          : taskName // ignore: cast_nullable_to_non_nullable
+              as String,
+      workingTime: workingTime == freezed
+          ? _value.workingTime
+          : workingTime // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_ScheduleSettingInputFormState
     implements _ScheduleSettingInputFormState {
-  const _$_ScheduleSettingInputFormState();
+  const _$_ScheduleSettingInputFormState(
+      {this.taskName = '', this.workingTime = '30分'});
+
+  @JsonKey(defaultValue: '')
+  @override
+  final String taskName;
+  @JsonKey(defaultValue: '30分')
+  @override
+  final String workingTime;
 
   @override
   String toString() {
-    return 'ScheduleSettingInputFormState()';
+    return 'ScheduleSettingInputFormState(taskName: $taskName, workingTime: $workingTime)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ScheduleSettingInputFormState);
+    return identical(this, other) ||
+        (other is _ScheduleSettingInputFormState &&
+            (identical(other.taskName, taskName) ||
+                const DeepCollectionEquality()
+                    .equals(other.taskName, taskName)) &&
+            (identical(other.workingTime, workingTime) ||
+                const DeepCollectionEquality()
+                    .equals(other.workingTime, workingTime)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(taskName) ^
+      const DeepCollectionEquality().hash(workingTime);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ScheduleSettingInputFormStateCopyWith<_ScheduleSettingInputFormState>
+      get copyWith => __$ScheduleSettingInputFormStateCopyWithImpl<
+          _ScheduleSettingInputFormState>(this, _$identity);
 }
 
 abstract class _ScheduleSettingInputFormState
     implements ScheduleSettingInputFormState {
-  const factory _ScheduleSettingInputFormState() =
-      _$_ScheduleSettingInputFormState;
+  const factory _ScheduleSettingInputFormState(
+      {String taskName, String workingTime}) = _$_ScheduleSettingInputFormState;
+
+  @override
+  String get taskName => throw _privateConstructorUsedError;
+  @override
+  String get workingTime => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$ScheduleSettingInputFormStateCopyWith<_ScheduleSettingInputFormState>
+      get copyWith => throw _privateConstructorUsedError;
 }
