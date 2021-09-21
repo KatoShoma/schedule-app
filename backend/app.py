@@ -35,7 +35,7 @@ def pipe():
             # 1回追加
             user_manager.increment_complate_counter()
             ws.send(get_complate_counter())
-    return
+    return 'connect websocket pipe'
 
 @app.route('/',methods=["GET"])
 def run():
