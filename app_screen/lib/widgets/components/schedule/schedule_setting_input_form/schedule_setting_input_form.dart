@@ -7,11 +7,13 @@ import 'package:schedule_application/widgets/components/schedule/schedule_list/s
 import 'package:schedule_application/widgets/components/schedule/schedule_list/schedule_list_data.dart';
 import 'package:schedule_application/widgets/components/schedule/schedule_setting_input_form/children/schedule_times_button.dart';
 import 'package:schedule_application/widgets/components/schedule/schedule_setting_input_form/schedule_setting_input_form_state.dart';
+import 'package:schedule_application/widgets/screens/schedule_setting/schedule_setting_screen_state.dart';
 
 class ScheduleSettingInputForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController _textEditingController;
     return StateNotifierProvider<ScheduleSettingInputFormController, ScheduleSettingInputFormState>(
       create: (_) => ScheduleSettingInputFormController(
         context: context,
@@ -30,6 +32,7 @@ class ScheduleSettingInputForm extends StatelessWidget {
                 width: double.infinity,
                 padding: EdgeInsets.all(10),
                 child: CupertinoTextField(
+                  maxLength: 20,
                   placeholder: "予定を入力してください",
                   onChanged: (String text) => context.read<ScheduleSettingInputFormController>().enteredTask(text),
                 ),
@@ -60,14 +63,7 @@ class ScheduleSettingInputForm extends StatelessWidget {
                     Container(
                       width: MediaQuery.of(context).size.width * 0.2,
                       child: ElevatedButton(
-                        onPressed: () {
-                          //TODO: 追加ボタンPUSH時の動作
-                          scheduleListData.add(
-                              ScheduleItemModel.createScheduleCell(
-                                scheduleName: '課題',
-                                times: '1時間',
-                              ));
-                        },
+                        onPressed: () => context.read<ScheduleSettingInputFormController>().onPressedAdd(),
                         child: Text(
                           '追加',
                           style: const TextStyle(
