@@ -15,7 +15,7 @@ user_manager = User_manager()
 
 @app.route('/scheduler',methods=["POST"])
 def run_scheduler():
-    return hoge
+    return 'scheduler'
 
 @app.route('/user_manager_increment',methods=["POST"])
 def user_manager_increment():
@@ -28,19 +28,18 @@ def pipe():
         while True:
             time.sleep(1)
             message = ws.receive()
-            if message:
-                break 
-            # datetime_now = datetime.datetime.now()
-            # data = {
-            #     'time': str(datetime_now),
-            #     'message': message
-            # }
+            if message is None:
+                break
+            else:
+                print(message)
+            # 1回追加
+            user_manager.increment_complate_counter()
             ws.send(get_complate_counter())
     return
 
 @app.route('/',methods=["GET"])
 def run():
-    return 'hoge'
+    return 'ようこそ'
 
 if __name__ == '__main__':
     app.debug = True
