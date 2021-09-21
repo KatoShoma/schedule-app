@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:schedule_application/utils/constant/working_times.dart';
+import 'package:schedule_application/widgets/components/schedule/schedule_list/schedule_item_model.dart';
+import 'package:schedule_application/widgets/components/schedule/schedule_list/schedule_list_data.dart';
+import 'package:schedule_application/widgets/components/schedule/schedule_list_screen/schedule_list_screen_state.dart';
 import 'package:state_notifier/state_notifier.dart';
 
 part 'schedule_setting_input_form_state.freezed.dart';
@@ -33,7 +36,6 @@ class ScheduleSettingInputFormController extends StateNotifier<ScheduleSettingIn
     Widget pickerItem(String workingTime) {
       return Text(workingTime);
     }
-    FocusScope.of(context).unfocus();
     showModalBottomSheet<void>(
       context: context,
       builder: (_) {
@@ -57,5 +59,15 @@ class ScheduleSettingInputFormController extends StateNotifier<ScheduleSettingIn
         );
       },
     );
+  }
+
+  void onPressedAdd() {
+    FocusScope.of(context).unfocus();
+    if(state.taskName == "") return;
+    scheduleListData.add(ScheduleItemModel.createScheduleCell(
+      scheduleName: state.taskName,
+      times: state.workingTime,
+    ));
+    state = state.copyWith(workingTime: '30分');
   }
 }
