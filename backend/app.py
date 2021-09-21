@@ -49,6 +49,8 @@ def user_manager_increment():
 
 @app.route('/pipe')
 def pipe():
+    print('hoge1', request.environ.get('wsgi.websocket'))
+    print('hoge2', request.environ['wsgi.websocket'])
     if request.environ.get('wsgi.websocket'):
         ws = request.environ['wsgi.websocket']
         while True:
@@ -58,6 +60,7 @@ def pipe():
                 break
             else:
                 print(message)
+                print(request.environ)
             # 1回追加
             user_manager.increment_complate_counter()
             ws.send(get_complate_counter())
