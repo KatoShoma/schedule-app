@@ -23,19 +23,20 @@ def run_scheduler():
 
     json_dict = request.json
     print(f'[Debug Msg] input_json:{json_dict}')
-
+    # expand json
     user_planning_time = json_dict['times']
     users_tasks = json_dict['tasks']
-
+    # compute schedule algorithm
     scheduler = SchedulerAlgorithm(user_planning_time, users_tasks)
     todo_task, giveup_task = scheduler.simple_algorithm()
+    # convert percent type
     user_planning_time = scheduler_into_percent(todo_task, user_planning_time)
-
+    # make results
     results = {}
     results['todo_task'] = todo_task
     results['give_up'] = giveup_task
     results['user_planning_time'] = user_planning_time
-
+    # save json
     with open('./output_template.json', 'w') as fp:
         json.dump(results, fp)
 
