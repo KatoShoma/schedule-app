@@ -67,6 +67,11 @@ def pipe():
 def run():
     return 'ようこそ'
 
+@app.route('/test',methods=["POST"])
+def run_test():
+    # return request.get_data()
+    return 'Hello Beautiful World!'
+
 if __name__ == '__main__':
     app.debug = True
 
