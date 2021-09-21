@@ -41,5 +41,10 @@ def main():
     with open('./output_template.json', 'w') as fp:
         json.dump(results, fp)
 
+    print('------ RESULTS OF THIS PROGRAM ------')
+    print('#%$&' * 30)
+    print(results)
+    print('#%$&' * 30)
+
 if __name__ == "__main__":
     main()
