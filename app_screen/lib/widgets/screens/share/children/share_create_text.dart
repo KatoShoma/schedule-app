@@ -65,17 +65,7 @@ class ShareText extends StatelessWidget {
             ),
           Spacer(),
           ],
-
         ),
-        // Text(
-        //   this.comp + '　人',
-        //   textAlign: TextAlign.center,
-        //   style: const TextStyle(
-        //     fontWeight: FontWeight.bold,
-        //     color: AppColor.red,
-        //     fontSize: 45.0,
-        //   ),
-        // ),
       ],
     );
   }
