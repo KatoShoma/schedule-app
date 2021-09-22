@@ -8,11 +8,14 @@ import 'package:schedule_application/widgets/screens/root/root_screen_state.dart
 import 'package:schedule_application/widgets/screens/schedule/schedule_screen.dart';
 import 'package:schedule_application/widgets/screens/setting/setting_screen.dart';
 import 'package:schedule_application/widgets/screens/share/share_screen.dart';
+import 'package:web_socket_channel/web_socket_channel.dart';
+import 'package:web_socket_channel/io.dart';
 import 'package:schedule_application/widgets/screens/timer/timer_screen.dart';
 
 class RootScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final channel = WebSocketChannel.connect(Uri.parse('ws://52.149.9.204/'));
     return StateNotifierProvider<RootScreenController, RootScreenState>(
       create: (_) => RootScreenController(
         context: context,
@@ -28,7 +31,10 @@ class RootScreen extends StatelessWidget {
                 return CupertinoPageScaffold(
                   child: [
                     ScheduleScreen(),
-                    ShareScreen(),
+                    ShareScreen(
+                      channel: channel,
+                    ),
+                    // MyApp(),
                     SettingScreen(),
                     //TimerScreen(),
                   ][index],

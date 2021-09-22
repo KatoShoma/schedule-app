@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:schedule_application/utils/color/app_color.dart';
-import 'package:flutter_state_notifier/flutter_state_notifier.dart';
-import 'package:schedule_application/widgets/screens/share/share_screen_state.dart';
-import 'package:provider/provider.dart';
 
 class ShareButton extends StatelessWidget {
   final Function() onPressed;
