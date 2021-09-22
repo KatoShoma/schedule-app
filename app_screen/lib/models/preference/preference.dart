@@ -8,6 +8,8 @@ enum PreferenceKey {
   isAllowedRetranslation,
   // ダークモードのON/OFF
   isDarkModeRetranslation,
+  // スケジュール完成画面
+  isCompleteSchedule,
 }
 
 class Preference {
@@ -48,6 +50,12 @@ class Preference {
   Future<bool> getBool(PreferenceKey key) async {
     final pref = await preference;
     final value = pref.getBool(EnumToString.convertToString(key)) ?? false;
+    return value;
+  }
+
+  Future<bool> getBoolFirst(PreferenceKey key) async {
+    final pref = await preference;
+    final value = pref.getBool(EnumToString.convertToString(key)) ?? true;
     return value;
   }
 
