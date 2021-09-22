@@ -38,13 +38,7 @@ class Websocket_Client():
 
     # サーバーから接続時にスレッドで起動する関数
     def run(self, *args):
-        while True:
-            time.sleep(0.1)
-            input_data = input("send data:") 
-            self.ws.send(input_data)
-    
-        self.ws.close()
-        print("thread terminating...")
+        print('connect success')
     
     # websocketクライアント起動
     def run_forever(self):
