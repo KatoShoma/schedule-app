@@ -8,7 +8,9 @@ from flask import Flask, request, render_template
 from flask import jsonify
 
 from user_manager.User_manager import User_manager
-from scheduler.websocket_client import Websocket_Client
+#from scheduler.websocket_client import Websocket_Client
+from websocket import create_connection
+
 
 ### Nishiyama lib
 from scheduler.scheduler_algorithm import SchedulerAlgorithm
@@ -19,8 +21,8 @@ app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
 app.config.from_object(__name__)
 HOST_ADDR = "ws://52.149.9.204"
-ws_client = Websocket_Client(HOST_ADDR)
-ws_client.run_forever()
+ws = create_connection(HOST_ADDR)
+#ws_client.run_forever()
 
 @app.route('/scheduler',methods=["POST"])
 def run_scheduler():
@@ -40,7 +42,7 @@ def run_scheduler():
     results['todo_task'] = todo_task
     results['give_up'] = giveup_task
     results['user_planning_time'] = user_planning_time
-    ws_client.ws.send('user')
+    ws.send('user')
     # send user_counter_increment
 
     
