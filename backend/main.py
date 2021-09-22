@@ -44,8 +44,19 @@ class Websocket_Server():
     def new_client(self, client, server):
         print("new client connected and was given id {}".format(client['id']))
         # 全クライアントにメッセージを送信
-        message = str(self.user_manager.get_complate_counter())
-        self.server.send_message_to_all(message)
+        # get cnt
+        comp_cnt = self.user_manager.get_complate_counter()
+        user_cnt = self.user_manager.get_user_counter()
+        # to json
+        cnt_json = {
+            'comp_cnt':str(comp_cnt),
+            'user_cnt':str(user_cnt),
+        }
+        cnt_json = json.dumps(cnt_json)
+        print(cnt_json)
+        # 全クライアントにメッセージを送信
+        self.server.send_message_to_all(cnt_json)
+
 
     # クライアント切断時に呼ばれる関数
     def client_left(self, client, server):
@@ -53,9 +64,15 @@ class Websocket_Server():
 
     # クライアントからメッセージを受信したときに呼ばれる関数
     def message_received(self, client, server, message):
-        print(message)
-        # increment
-        self.user_manager.increment_complate_counter()
+        print(f'Debug : {message}')
+        # messageで条件分岐
+        if message == 'comp':
+            # increment
+            self.user_manager.increment_complate_counter()
+        else:
+            # increment
+            self.user_manager.increment_user_counter()
+        
         # get cnt
         comp_cnt = self.user_manager.get_complate_counter()
         user_cnt = self.user_manager.get_user_counter()
