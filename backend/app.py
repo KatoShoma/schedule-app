@@ -41,7 +41,7 @@ def run_scheduler():
     results['todo_task'] = todo_task
     results['give_up'] = giveup_task
     results['user_planning_time'] = user_planning_time
-    ws_client.ws.send('user_cnt')
+    ws_client.ws.send('user')
     # send user_counter_increment
 
     

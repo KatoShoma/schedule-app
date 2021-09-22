@@ -69,10 +69,11 @@ class Websocket_Server():
         if message == 'comp':
             # increment
             self.user_manager.increment_complate_counter()
-        else:
+        elif message == 'user':
             # increment
             self.user_manager.increment_user_counter()
-        
+        else:
+            break
         # get cnt
         comp_cnt = self.user_manager.get_complate_counter()
         user_cnt = self.user_manager.get_user_counter()
