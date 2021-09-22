@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rxdart/rxdart.dart';
+import 'package:schedule_application/models/app_refresher/app_refresher.dart';
 import 'package:schedule_application/widgets/screens/schedule_setting/schedule_setting_screen.dart';
 import 'package:state_notifier/state_notifier.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -17,6 +19,7 @@ class ScheduleScreenController extends StateNotifier<ScheduleScreenState> with L
   ScheduleScreenController({
     required this.context,
   }) : super(const ScheduleScreenState());
+
 
   @override
   void initState() {

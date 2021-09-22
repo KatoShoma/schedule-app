@@ -4,6 +4,7 @@ import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:keyboard_actions/keyboard_actions.dart';
 import 'package:provider/provider.dart';
 import 'package:schedule_application/gen/assets.gen.dart';
+import 'package:schedule_application/models/preference/preference.dart';
 import 'package:schedule_application/utils/color/app_color.dart';
 import 'package:schedule_application/widgets/components/schedule/schedule_list/schedule_item_model.dart';
 import 'package:schedule_application/widgets/components/schedule/schedule_list/schedule_list_data.dart';
@@ -23,6 +24,7 @@ class ScheduleSettingScreen extends StatelessWidget {
     return StateNotifierProvider<ScheduleSettingScreenController, ScheduleSettingScreenState>(
       create: (_) => ScheduleSettingScreenController(
         context: context,
+        preference: Preference(),
       ),
       builder: (context, _){
         return Scaffold(

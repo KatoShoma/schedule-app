@@ -17,11 +17,9 @@ class _$ScheduleListScreenStateTearOff {
   const _$ScheduleListScreenStateTearOff();
 
   _ScheduleListScreenState call(
-      {List<ScheduleItemModel> schedules = const [],
-      String testString = 'Test'}) {
+      {List<ScheduleItemModel> schedules = const []}) {
     return _ScheduleListScreenState(
       schedules: schedules,
-      testString: testString,
     );
   }
 }
@@ -32,7 +30,6 @@ const $ScheduleListScreenState = _$ScheduleListScreenStateTearOff();
 /// @nodoc
 mixin _$ScheduleListScreenState {
   List<ScheduleItemModel> get schedules => throw _privateConstructorUsedError;
-  String get testString => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ScheduleListScreenStateCopyWith<ScheduleListScreenState> get copyWith =>
@@ -44,7 +41,7 @@ abstract class $ScheduleListScreenStateCopyWith<$Res> {
   factory $ScheduleListScreenStateCopyWith(ScheduleListScreenState value,
           $Res Function(ScheduleListScreenState) then) =
       _$ScheduleListScreenStateCopyWithImpl<$Res>;
-  $Res call({List<ScheduleItemModel> schedules, String testString});
+  $Res call({List<ScheduleItemModel> schedules});
 }
 
 /// @nodoc
@@ -59,17 +56,12 @@ class _$ScheduleListScreenStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? schedules = freezed,
-    Object? testString = freezed,
   }) {
     return _then(_value.copyWith(
       schedules: schedules == freezed
           ? _value.schedules
           : schedules // ignore: cast_nullable_to_non_nullable
               as List<ScheduleItemModel>,
-      testString: testString == freezed
-          ? _value.testString
-          : testString // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -81,7 +73,7 @@ abstract class _$ScheduleListScreenStateCopyWith<$Res>
           $Res Function(_ScheduleListScreenState) then) =
       __$ScheduleListScreenStateCopyWithImpl<$Res>;
   @override
-  $Res call({List<ScheduleItemModel> schedules, String testString});
+  $Res call({List<ScheduleItemModel> schedules});
 }
 
 /// @nodoc
@@ -99,17 +91,12 @@ class __$ScheduleListScreenStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? schedules = freezed,
-    Object? testString = freezed,
   }) {
     return _then(_ScheduleListScreenState(
       schedules: schedules == freezed
           ? _value.schedules
           : schedules // ignore: cast_nullable_to_non_nullable
               as List<ScheduleItemModel>,
-      testString: testString == freezed
-          ? _value.testString
-          : testString // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -117,19 +104,15 @@ class __$ScheduleListScreenStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ScheduleListScreenState implements _ScheduleListScreenState {
-  const _$_ScheduleListScreenState(
-      {this.schedules = const [], this.testString = 'Test'});
+  const _$_ScheduleListScreenState({this.schedules = const []});
 
   @JsonKey(defaultValue: const [])
   @override
   final List<ScheduleItemModel> schedules;
-  @JsonKey(defaultValue: 'Test')
-  @override
-  final String testString;
 
   @override
   String toString() {
-    return 'ScheduleListScreenState(schedules: $schedules, testString: $testString)';
+    return 'ScheduleListScreenState(schedules: $schedules)';
   }
 
   @override
@@ -138,17 +121,12 @@ class _$_ScheduleListScreenState implements _ScheduleListScreenState {
         (other is _ScheduleListScreenState &&
             (identical(other.schedules, schedules) ||
                 const DeepCollectionEquality()
-                    .equals(other.schedules, schedules)) &&
-            (identical(other.testString, testString) ||
-                const DeepCollectionEquality()
-                    .equals(other.testString, testString)));
+                    .equals(other.schedules, schedules)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(schedules) ^
-      const DeepCollectionEquality().hash(testString);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(schedules);
 
   @JsonKey(ignore: true)
   @override
@@ -158,14 +136,11 @@ class _$_ScheduleListScreenState implements _ScheduleListScreenState {
 }
 
 abstract class _ScheduleListScreenState implements ScheduleListScreenState {
-  const factory _ScheduleListScreenState(
-      {List<ScheduleItemModel> schedules,
-      String testString}) = _$_ScheduleListScreenState;
+  const factory _ScheduleListScreenState({List<ScheduleItemModel> schedules}) =
+      _$_ScheduleListScreenState;
 
   @override
   List<ScheduleItemModel> get schedules => throw _privateConstructorUsedError;
-  @override
-  String get testString => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ScheduleListScreenStateCopyWith<_ScheduleListScreenState> get copyWith =>
