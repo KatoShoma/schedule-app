@@ -73,7 +73,7 @@ class Websocket_Server():
             # increment
             self.user_manager.increment_user_counter()
         else:
-            break
+            return
         # get cnt
         comp_cnt = self.user_manager.get_complate_counter()
         user_cnt = self.user_manager.get_user_counter()
