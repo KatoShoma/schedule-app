@@ -5,3 +5,7 @@ final List<String> workingTimesTextList = [
 final Map<String, double> workingTimesList = {
   '30分': 0.5, '1時間': 1, '2時間': 2, '3時間': 3,
 };
+
+Map<String, String> scheduleMap = {};
+List<String> scheduleTask = [];
+List<String> scheduleTime = [];
