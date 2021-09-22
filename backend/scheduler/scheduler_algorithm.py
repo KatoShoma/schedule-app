@@ -30,16 +30,36 @@ class SchedulerAlgorithm:
             time_condition = self.user_planning_time - total_times
             print(f'time_condition:{time_condition}')
             if time_condition >= 0:
-                delete_tasks = {}
+                self.delete_tasks = {}
                 self.users_tasks['free'] = time_condition
                 break
             print(f'currently dicts{self.users_tasks}')
 
             print('^' * 20)
-            self.users_tasks, delete_tasks = self.give_up_tasks(self.users_tasks)
+            self.users_tasks, self.delete_tasks = self.give_up_tasks(self.users_tasks)
             print('^' * 20)
 
-        return self.users_tasks, delete_tasks
+        return self.users_tasks, self.delete_tasks
+
+    def gyutto_algorithm(self):
+        gyutto_dict = {}
+
+        print('****gyutto_algorithm is called****')
+        print(f'users_tasks:{self.users_tasks}')
+
+        total_time = self.sum_task_times(self.users_tasks)
+        print(f'total time:{total_time}')
+        rate = self.user_planning_time / total_time
+        print(f'rate time: {rate}')
+
+        for task, time in self.users_tasks.items():
+            time *= rate
+            print(f'task:{task}, time:{time}')
+            gyutto_dict[task] = time
+
+        return gyutto_dict
+
+
 
     def sum_task_times(self, user_tasks):
 
