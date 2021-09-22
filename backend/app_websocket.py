@@ -14,7 +14,7 @@ from websocket import create_connection
 
 ### Nishiyama lib
 from scheduler.scheduler_algorithm import SchedulerAlgorithm
-from scheduler.scheduler_algorithm import scheduler_into_percent
+from scheduler.scheduler_algorithm import scheduler_into_percent, separate_free_time
 
 
 app = Flask(__name__)
@@ -39,17 +39,12 @@ def run_scheduler():
     user_planning_time = scheduler_into_percent(todo_task, user_planning_time)
     # make results
     results = {}
-    results['todo_task'] = todo_task
     results['give_up'] = giveup_task
     results['user_planning_time'] = user_planning_time
-    ws.send('user')
-    # send user_counter_increment
 
-    
-    # save json
-    # with open('./output_template.json', 'w') as fp:
-    #     json.dump(results, fp)
-    # convert jsonify, when this function call.
+    results['todo_task'] = separate_free_time(todo_task)
+    ws.send('user')
+
     return jsonify(results)
 
 @app.route('/user_manager_increment',methods=["POST"])
