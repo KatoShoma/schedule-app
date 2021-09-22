@@ -33,18 +33,19 @@ def main():
     print(f'user_planning_time:{user_planning_time}')
 
     results = {}
-    results['todo_task'] = todo_task
+
     results['give_up'] = giveup_task
     results['user_planning_time'] = user_planning_time
+    results['todo_task'] = scheduler_algorithm.separate_free_time(todo_task)
 
     # save
     # with open('./output_template.json', 'w') as fp:
     #     json.dump(results, fp)
 
-    # print('------ RESULTS OF THIS PROGRAM ------')
-    # print('#%$&' * 30)
-    # print(results)
-    # print('#%$&' * 30)
+    print('------ RESULTS OF THIS PROGRAM ------')
+    print('#%$&' * 30)
+    print(results)
+    print('#%$&' * 30)
 
 if __name__ == "__main__":
     main()
