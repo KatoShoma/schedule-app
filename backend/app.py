@@ -12,7 +12,7 @@ from scheduler.websocket_client import Websocket_Client
 
 ### Nishiyama lib
 from scheduler.scheduler_algorithm import SchedulerAlgorithm
-from scheduler.scheduler_algorithm import scheduler_into_percent
+from scheduler.scheduler_algorithm import scheduler_into_percent, separate_free_time
 
 
 app = Flask(__name__)
@@ -37,10 +37,14 @@ def run_scheduler():
     user_planning_time = scheduler_into_percent(todo_task, user_planning_time)
     # make results
     results = {}
-    results['todo_task'] = todo_task
     results['give_up'] = giveup_task
     results['user_planning_time'] = user_planning_time
-    #ws_client.ws.send('user')
+
+    results['todo_task'] = separate_free_time(todo_task)
+
+
+    ws_client.ws.send('user_cnt')
+
     # send user_counter_increment
 
     
@@ -79,7 +83,6 @@ def run():
 
 @app.route('/test',methods=["POST"])
 def run_test():
-    # return request.get_data()
     return 'Hello Beautiful World!'
 
 if __name__ == '__main__':

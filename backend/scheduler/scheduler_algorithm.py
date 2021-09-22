@@ -69,3 +69,23 @@ def scheduler_into_percent(todo_task, user_planning_time):
         scheduler_percent[task] = time / user_planning_time * 100
 
     return scheduler_percent
+
+def separate_free_time(todo_task):
+
+    print('separate_free_time is called.')
+    print(f'todo_task:{todo_task}')
+    todo_task_free_time_n = len(todo_task)
+    print(f'todo_task_free_time_n:{todo_task_free_time_n}')
+    if todo_task['free'] == 0:
+        return todo_task
+    free_time = todo_task['free'] / todo_task_free_time_n
+    print(f'free_time:{free_time}')
+    del todo_task['free']
+
+    for i in range(0,todo_task_free_time_n):
+        free_name = f'free{i}'
+        todo_task[free_name] = free_time
+    print(f'todo_task:{todo_task}')
+
+    return todo_task
+
