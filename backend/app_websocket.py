@@ -18,9 +18,9 @@ from scheduler.scheduler_algorithm import scheduler_into_percent
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
 app.config.from_object(__name__)
-# HOST_ADDR = "ws://52.149.9.204"
-# ws_client = Websocket_Client(HOST_ADDR)
-# ws_client.run_forever()
+HOST_ADDR = "ws://52.149.9.204"
+ws_client = Websocket_Client(HOST_ADDR)
+ws_client.run_forever()
 
 @app.route('/scheduler',methods=["POST"])
 def run_scheduler():
