@@ -35,6 +35,7 @@ class $AssetsImagesGen {
   AssetGenImage get smail => const AssetGenImage('assets/images/smail.png');
   AssetGenImage get synergy => const AssetGenImage('assets/images/synergy.png');
   AssetGenImage get tear => const AssetGenImage('assets/images/tear.png');
+  AssetGenImage get eventMemo => const AssetGenImage('assets/images/eventMemo.png');
 }
 
 class Assets {

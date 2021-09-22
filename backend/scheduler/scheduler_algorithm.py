@@ -1,5 +1,3 @@
-
-
 class SchedulerAlgorithm:
     """
     This class is mainly Scheduler Algorithm, whichi determin schedule, time table for user
@@ -13,29 +11,35 @@ class SchedulerAlgorithm:
         :param user_planning_time: integer
         :param users_tasks: dict
         """
-        print("constructer is called from main")
+        print("****SchedulerAlgorithm is called****")
         self.user_planning_time = user_planning_time
         self.users_tasks = users_tasks
-        print(f'user_planning_time : {self.user_planning_time}, users_tasks : {self.users_tasks}')
+        self.give_up_task_dict = {}
+        print(f'user_planning_time : {self.user_planning_time}')
+        print(f'users_tasks : {self.users_tasks}')
+        print(f'give_up_task_dict:{self.give_up_task_dict}')
+        print('*'*40)
 
     def simple_algorithm(self):
-
-        self.give_up_task_dict = {}
+        print('****simple algorithm is called****')
         while True:
 
-            self.total_times = self.sum_task_times(self.users_tasks)
-            self.time_condition = self.user_planning_time - self.total_times
-
-            if self.time_condition >= 0:
+            total_times = self.sum_task_times(self.users_tasks)
+            print(f'total_times : {total_times}')
+            print(f'user_planning_time : {self.user_planning_time}')
+            time_condition = self.user_planning_time - total_times
+            print(f'time_condition:{time_condition}')
+            if time_condition >= 0:
+                delete_tasks = {}
+                self.users_tasks['free'] = time_condition
                 break
-
-            print('-' * 20)
             print(f'currently dicts{self.users_tasks}')
-            print('-' * 20)
 
-            self.users_tasks, self.delete_tasks = self.give_up_tasks(self.users_tasks, self.give_up_task_dict)
+            print('^' * 20)
+            self.users_tasks, delete_tasks = self.give_up_tasks(self.users_tasks)
+            print('^' * 20)
 
-        return self.users_tasks, self.delete_tasks
+        return self.users_tasks, delete_tasks
 
     def sum_task_times(self, user_tasks):
 
@@ -44,7 +48,7 @@ class SchedulerAlgorithm:
             total_times += time
         return total_times
 
-    def give_up_tasks(self, users_tasks, give_up_task_dict):
+    def give_up_tasks(self, users_tasks):
 
         long_task = max(users_tasks, key=users_tasks.get)
 
@@ -53,10 +57,9 @@ class SchedulerAlgorithm:
         # remove long time
         give_up_task_time = users_tasks[long_task]
         self.give_up_task_dict[long_task] = give_up_task_time
-
         del users_tasks[long_task]
 
-        return users_tasks,give_up_task_dict
+        return users_tasks, self.give_up_task_dict
 
 def scheduler_into_percent(todo_task, user_planning_time):
 

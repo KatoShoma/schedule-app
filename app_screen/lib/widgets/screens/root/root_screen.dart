@@ -10,6 +10,7 @@ import 'package:schedule_application/widgets/screens/setting/setting_screen.dart
 import 'package:schedule_application/widgets/screens/share/share_screen.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:web_socket_channel/io.dart';
+import 'package:schedule_application/widgets/screens/timer/timer_screen.dart';
 
 class RootScreen extends StatelessWidget {
   @override
@@ -35,6 +36,7 @@ class RootScreen extends StatelessWidget {
                     ),
                     // MyApp(),
                     SettingScreen(),
+                    //TimerScreen(),
                   ][index],
                 );
               },
