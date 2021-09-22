@@ -4,4 +4,4 @@ final sampleItem = ScheduleItemModel.createScheduleCell(
     scheduleName: '課題', times: '1時間',
 );
 
-final List<ScheduleItemModel> scheduleListData = [];
+List<ScheduleItemModel> scheduleListData = [];

@@ -10,7 +10,6 @@ part 'schedule_list_screen_state.freezed.dart';
 class ScheduleListScreenState with _$ScheduleListScreenState {
   const factory ScheduleListScreenState({
     @Default ([]) List<ScheduleItemModel> schedules,
-    @Default ('Test') String testString,
   }) = _ScheduleListScreenState;
 }
 
