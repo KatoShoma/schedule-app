@@ -14,11 +14,11 @@ class Websocket_Client():
 
         # WebSocketAppクラスを生成
         # 関数登録のために、ラムダ式を使用
-        # self.ws = websocket.WebSocketApp(host_addr,
-        #     on_message = lambda ws, msg: self.on_message(ws, msg),
-        #     on_error   = lambda ws, msg: self.on_error(ws, msg),
-        #     on_close   = lambda ws: self.on_close(ws))
-        # self.ws.on_open = lambda ws: self.on_open(ws)
+        self.ws = websocket.WebSocketApp(host_addr,
+            on_message = lambda ws, msg: self.on_message(ws, msg),
+            on_error   = lambda ws, msg: self.on_error(ws, msg),
+            on_close   = lambda ws: self.on_close(ws))
+        self.ws.on_open = lambda ws: self.on_open(ws)
 
     # メッセージ受信に呼ばれる関数
     def on_message(self, ws, message):
