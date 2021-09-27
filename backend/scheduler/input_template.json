@@ -1,7 +1,11 @@
 {
- "times": 13,
+  "times": 24,
 "tasks":{
-  "math" : 1,
-  "japanese" : 1
+  "math" : 13,
+  "japanese" : 18,
+  "english" : 7,
+  "movie" : 6,
+  "sea" : 8,
+  "soccer" : 8
  }
 }

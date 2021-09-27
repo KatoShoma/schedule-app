@@ -23,20 +23,27 @@ def main():
     print("debugging scheduler algorithm...")
     scheduler = scheduler_algorithm.SchedulerAlgorithm(user_planning_time, users_tasks)
 
-    # print("*" * 30)
-    todo_task, giveup_task = scheduler.simple_algorithm()
-    print(f'todo_task : {todo_task}')
-    print(f'give up task : {giveup_task}')
-    # print("*" * 30)
-
-    user_planning_time = scheduler_algorithm.scheduler_into_percent(todo_task, user_planning_time)
-    print(f'user_planning_time:{user_planning_time}')
-
     results = {}
-
-    results['give_up'] = giveup_task
+    results['give_up'] = 'never give up'
     results['user_planning_time'] = user_planning_time
-    results['todo_task'] = scheduler_algorithm.separate_free_time(todo_task)
+    results['todo_task'] = scheduler.gyutto_algorithm()
+
+    # print("*" * 30)
+    # todo_task, giveup_task = scheduler.simple_algorithm()
+    # print(f'todo_task : {todo_task}')
+    # print(f'give up task : {giveup_task}')
+    # # print("*" * 30)
+    #
+    # user_planning_time = scheduler_algorithm.scheduler_into_percent(todo_task, user_planning_time)
+    # print(f'user_planning_time:{user_planning_time}')
+    #
+
+    #
+    # for simple algo
+    # results = {}
+    # results['give_up'] = giveup_task
+    # results['user_planning_time'] = user_planning_time
+    # results['todo_task'] = scheduler_algorithm.separate_free_time(todo_task)
 
     # save
     # with open('./output_template.json', 'w') as fp:
